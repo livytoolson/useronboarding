@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import * as yup from 'yup';
+import styled from 'styled-components';
+
+const FormDiv = styled.div`
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`
 
 const Form = () => {
     const [ formState, setFormState ] = useState({
@@ -104,7 +112,7 @@ const Form = () => {
 
     return (
         <form className="form-container" onSubmit={formSubmit}>
-            <div className="all-center">
+            <FormDiv className="all-center">
 
                 {/* // Text Input // */}
                 <label htmlFor="first-name">
@@ -185,7 +193,7 @@ const Form = () => {
                     </button>
                 </div>
                 {/* // Ends from submit-btn div // */}
-            </div>
+            </FormDiv>
             {/* // Ends from text div // */}
         </form>
     );
