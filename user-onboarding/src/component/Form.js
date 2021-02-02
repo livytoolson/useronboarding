@@ -10,6 +10,14 @@ const FormDiv = styled.div`
   justify-content: space-between;
 `
 
+const SyledErrors = styled.div`
+    color: red;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
 const Form = () => {
     const [ formState, setFormState ] = useState({
         fname: '',
@@ -111,11 +119,11 @@ const Form = () => {
 
 
     return (
-        <form className="form-container" onSubmit={formSubmit}>
+        <form onSubmit={formSubmit}>
             <FormDiv className="all-center">
 
                 {/* // Text Input // */}
-                <label htmlFor="first-name">
+                <label>
                     First Name:&nbsp;
                     <input
                         value = {formState.fname}
@@ -127,7 +135,7 @@ const Form = () => {
                     />
                 </label>
 
-                <label htmlFor="last-name">
+                <label>
                     Last Name:&nbsp;
                     <input
                         value = {formState.lname}
@@ -139,7 +147,7 @@ const Form = () => {
                     />
                 </label>
 
-                <label htmlFor="emailInput">
+                <label>
                     Email:&nbsp;
                     <input
                         value = {formState.email}
@@ -151,7 +159,7 @@ const Form = () => {
                     />
                 </label>
 
-                <label htmlFor="passwordInput">
+                <label>
                     Password: &nbsp;
                     <input
                         value = {formState.password}
@@ -164,16 +172,16 @@ const Form = () => {
                 </label>
 
                 {/* // Errors // */}
-                <div className="alert">
+                <SyledErrors>
                     <div> {errors.fname} </div>
                     <div> {errors.lname} </div>
                     <div> {errors.email} </div>
                     <div> {errors.password} </div>
                     <div> {errors.terms} </div>
-                </div>
+                </SyledErrors>
 
-                <div className="form-checkbox">
-                    <label htmlFor="termsInput">
+                <div>
+                    <label>
                         <h4>Do you agree to the Terms of Service?</h4>
                         <input
                             type="checkbox"
@@ -186,9 +194,9 @@ const Form = () => {
                 </div>
 
                 {/* // Submit Button // */}
-                <div className="submit-btn">
+                <div>
                     {/* // disable button until form is complete // */}
-                    <button className="btn" disable={btnDisabled} type="submit">
+                    <button disable={btnDisabled} type="submit">
                         Submit
                     </button>
                 </div>
