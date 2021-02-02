@@ -6,8 +6,7 @@ import styled from 'styled-components';
 const FormDiv = styled.div`
   display:flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  align-content: space-around
 `
 
 const SyledErrors = styled.div`
@@ -120,11 +119,11 @@ const Form = () => {
 
     return (
         <form onSubmit={formSubmit}>
-            <FormDiv className="all-center">
+            <FormDiv>
 
                 {/* // Text Input // */}
                 <label>
-                    First Name:&nbsp;
+                    First Name: &nbsp;
                     <input
                         value = {formState.fname}
                         onChange={inputChange}
@@ -136,7 +135,7 @@ const Form = () => {
                 </label>
 
                 <label>
-                    Last Name:&nbsp;
+                    Last Name: &nbsp;
                     <input
                         value = {formState.lname}
                         onChange={inputChange}
@@ -148,7 +147,7 @@ const Form = () => {
                 </label>
 
                 <label>
-                    Email:&nbsp;
+                    Email: &nbsp;
                     <input
                         value = {formState.email}
                         onChange={inputChange}
