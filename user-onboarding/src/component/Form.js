@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import * as yup from 'yup';
 import styled from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Button } from 'react-bootstrap';
 
 const FormDiv = styled.div`
   display:flex;
@@ -118,6 +121,21 @@ const Form = () => {
 
 
     return (
+        // <Form>
+        //     <Form.Group>
+        //         <Form.Label>Email Address</Form.Label>
+        //         <Form.Control type="email" placeholder="example@email.com" />
+        //         <Form.Text className="text-muted">
+        //             We'll never share you're email address, trust us!
+        //         </Form.Text>
+        //     </Form.Group>
+        // </Form>
+         // <Form>
+        //     <Form.Group>
+        //         <Form.Label>Password</Form.Label>
+        //         <Form.Control type="password" placeholder="password" />
+        //     </Form.Group>
+        // </Form>
         <form onSubmit={formSubmit}>
             <FormDiv>
 
@@ -195,9 +213,9 @@ const Form = () => {
                 {/* // Submit Button // */}
                 <div>
                     {/* // disable button until form is complete // */}
-                    <button disable={btnDisabled} type="submit">
+                    <Button variant='primary'disable={btnDisabled} type="submit">
                         Submit
-                    </button>
+                    </Button>
                 </div>
                 {/* // Ends from submit-btn div // */}
             </FormDiv>
